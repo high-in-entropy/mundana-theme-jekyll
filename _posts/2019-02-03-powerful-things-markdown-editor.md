@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Powerful things you can do with the Markdown editor"
-author: jane
-categories: [ Jekyll, tutorial ]
-image: https://images.unsplash.com/photo-1528784351875-d797d86873a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80
-tags: [summer]
+title:  "Flight Radar : Building your own simple, real time Flight Monitor using Python"
+author: Viraj
+categories: [ Viraj, tutorial ]
+image: https://drive.google.com/open?id=1y7Im8imELnlVOj2qZX_aFjzX7bBRvfgw
+tags: [Python, Fun]
 ---
 There are lots of powerful things you can do with the Markdown editor. If you've gotten pretty comfortable with writing in Markdown, then you may enjoy some more advanced tips about the types of things you can do with Markdown!
 
