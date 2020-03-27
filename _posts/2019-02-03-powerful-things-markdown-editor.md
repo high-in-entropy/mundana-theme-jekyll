@@ -3,7 +3,7 @@ layout: post
 title:  "Flight Radar : Building your own simple, real time Flight Monitor using Python"
 author: Viraj
 categories: [ Viraj, tutorial ]
-image: https://drive.google.com/open?id=1y7Im8imELnlVOj2qZX_aFjzX7bBRvfgw
+image: /assets/images/aircraft-3702676_960_720.jpg
 tags: [Python, Fun]
 ---
 There are lots of powerful things you can do with the Markdown editor. If you've gotten pretty comfortable with writing in Markdown, then you may enjoy some more advanced tips about the types of things you can do with Markdown!
