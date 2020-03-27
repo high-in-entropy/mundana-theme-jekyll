@@ -3,7 +3,7 @@ layout: post
 title:  "Simpson’s Paradox : When Statistics lie"
 author: Viraj
 categories: [ tutorial ]
-image: assets/images/stats.jpg
+image: https://raw.githubusercontent.com/high-in-entropy/mundana-theme-jekyll/master/assets/images/simpson.gif
 tags: [statistics]
 ---
 What if I told you sometimes statistical inferences show exactly opposite than what is the reality!? Sometimes the fractions lie to us. Sometimes there are hidden parameters out there which hide in plain sight and cause us to wrongly interpret studies. Simpson’s Paradox is one of them.
