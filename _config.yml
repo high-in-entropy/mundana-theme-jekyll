@@ -3,7 +3,7 @@ name: 'Parity'
 description: 'My take on the world around me'
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
-baseurl: ''
+baseurl: 
 disqus: 'demowebsite'
 email: 'viraj.mohile2013@gmail.com'
 
