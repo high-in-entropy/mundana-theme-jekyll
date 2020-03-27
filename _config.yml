@@ -4,7 +4,6 @@ description: 'My take on the world around me'
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
 baseurl: 
-disqus: 'demowebsite'
 email: 'viraj.mohile2013@gmail.com'
 
 include: ["_pages"]
@@ -22,7 +21,7 @@ authors:
       name:           Viraj
       site:           https://high-in-entropy.github.io/mundana-theme-jekyll/
       avatar:         /assets/images/avatar1.jpg
-      bio:            "Hi, I am Viraj!"
+      bio:            "Hi, I am Viraj! I am currently in my Pre-Final year of Bachelors from National Institute of Technology, Surat. My interests lie in Technology aided Finance. Some other subjects of interests include Economics, Game Theory. Portfolio Optimization and Risk Management."
       email:          viraj.mohile2013@gmail.com
       twitter:        https://twitter.com/high_in_entropy
 
