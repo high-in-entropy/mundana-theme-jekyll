@@ -14,7 +14,7 @@ Not only that, almost all public health research work on the philosophy of which
 
 # History
 ## UC Berkeley Gender Bias
-![UC Berkeley](assets/images/ucb.jpg)
+![UC Berkeley](https://drive.google.com/file/d/1y7Im8imELnlVOj2qZX_aFjzX7bBRvfgw/view?usp=sharing)
 
 One of the best-known examples of Simpson’s paradox is a study of gender bias among graduate school admissions to the University of California, Berkeley. The admission figures for the fall of 1973 showed that men applying were more likely than women to be admitted, and the difference was so large that it was unlikely to be due to chance.
 
