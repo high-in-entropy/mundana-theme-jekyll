@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Could we reinvent the charm of old cities"
-author: jane
-categories: [ Jekyll, tutorial ]
-image: assets/images/home.jpg
+title:  "The French Experience: Pondicherry"
+author: Viraj
+categories: [ Travel, experience]
+image: https://github.com/high-in-entropy/mundana-theme-jekyll/blob/master/assets/images/IMG_20191029_133450.jpg?raw=true
 tags: [sticky]
 ---
 
