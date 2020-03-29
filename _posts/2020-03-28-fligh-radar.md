@@ -64,11 +64,11 @@ Move to the directory where the repo is cloned and run
 ![OSNAPI](https://github.com/high-in-entropy/mundana-theme-jekyll/blob/master/assets/images/f4.png?raw=true)
 
 The API is not available on either conda cloud or PyPI and so it requires manual installation.
-
-`git clone https://github.com/openskynetwork/opensky-api.git`
-`cd opensky-api/python`
-`python setup.py install`
-
+```
+git clone https://github.com/openskynetwork/opensky-api.git
+cd opensky-api/python
+python setup.py install
+```
 
 ## High-Resolution MAps : Basemap (Optional)
 
@@ -82,12 +82,12 @@ Now let’s open up our Jupyter Notebooks and import the required packages. In t
 `jupyter notebook`
 
 ## Importing Requirements
-
-`import matplotlib.pyplot as plt`
-`from opensky_api import OpenSkyApi`
-`from mpl_toolkits.basemap import Basemap`
-`from IPython import display`
-
+```
+import matplotlib.pyplot as plt
+from opensky_api import OpenSkyApi
+from mpl_toolkits.basemap import Basemap
+from IPython import display
+```
 All the plots made by matplotlib are stored at a specific memory location while the code runs. When we run the code, it by default prints a message telling us where the plot is saved. However, if instead, we want all the plots to be displayed as soon as they are made inside our notebook we need to inform it explicitly.
 
 `%matplotlib inline`
@@ -96,20 +96,22 @@ Now let’s define a function which will help us fetch the latitude and longitud
 The latitude, longitude coordinates can be easily known from Google Maps by clicking at random points within our desired box.
 Let’s define a function which returns the latitude, longitude coordinates of the flights in the box specified.
 
-`def coordinates():`
-    `api = OpenSkyApi()`
-    `lon = []`
-    `lat = []`
-    `j = 0`
-    `# bbox = (min latitude, max latitude, min longitude, max longitude)`
-    `states = api.get_states(bbox=(8.27, 33.074, 68.4, 95.63))`
-    `for s in states.states:`
-        `lon.append([])`
-        `lon[j] = s.longitude`
-        `lat.append([])`
-        `lat[j] = s.latitude`
-        `j+=1`
-    `return(lon, lat)`
+```
+def coordinates():
+    api = OpenSkyApi()
+    lon = []
+    lat = []
+    j = 0
+    # bbox = (min latitude, max latitude, min longitude, max longitude)
+    states = api.get_states(bbox=(8.27, 33.074, 68.4, 95.63))
+    for s in states.states:
+        lon.append([])
+        lon[j] = s.longitude
+        lat.append([])
+        lat[j] = s.latitude
+        j+=1
+    return(lon, lat)
+```
 
 Here, `api.get_states()` helps us define the box under which we need to fetch the flights’ data. Here the bbox covers Indian Airspace. This code snippet is already commented and so it’s not difficult to understand. The loop iterates over all the states fetched from the bbox specified and we extract only the latitude and longitude out of it. At last, the (lat, lon) lists are returned which now possess the location of every flight over the Indian Airspace at the time you are reading this!
 Now let’s plot the coordinates fetched on the Indian Airspace. As mentioned, to properly visualize the aircrafts’ movements over space we would consider only the region of Indian Airspace below the Tropic of Cancer.  
@@ -121,27 +123,30 @@ To display the plots one after the other it’s obvious we will use an iteration
 `a = int(input())`
 
 Now let's code the iteration 
-
-`for i in range(1, a + 1) :`
-    `fig_size = plt.rcParams["figure.figsize"]`
-    `fig_size[0] = 20`
-    `fig_size[1] = 20`
-    `plt.rcParams["figure.figsize"] = fig_size`
-    `lon, lat = coordinates()`
-    `m = Basemap(projection = 'mill', llcrnrlat = 8.1957,   urcrnrlat = 23.079, llcrnrlon = 68.933, urcrnrlon = 88.586, resolution = 'h')`
-    `m.drawcoastlines()`
-    `m.drawmapboundary(fill_color = '#FFFFFF')`
-    `x, y = m(lon, lat)`
-    `plt.scatter(x, y, s = 5)`
-    `display.clear_output(wait=True)`
-    `display.display(plt.gcf())`
+```
+for i in range(1, a + 1) :
+    fig_size = plt.rcParams["figure.figsize"]
+    fig_size[0] = 20
+    fig_size[1] = 20
+    plt.rcParams["figure.figsize"] = fig_size
+    lon, lat = coordinates()
+    m = Basemap(projection = 'mill', llcrnrlat = 8.1957,   urcrnrlat = 23.079, llcrnrlon = 68.933, urcrnrlon = 88.586, resolution = 'h')
+    m.drawcoastlines()
+    m.drawmapboundary(fill_color = '#FFFFFF')
+    x, y = m(lon, lat)
+    plt.scatter(x, y, s = 5)
+    display.clear_output(wait=True)
+    display.display(plt.gcf())
+```
 
 Let’s break down and understand this for – loop step by step
 
-`fig_size = plt.rcParams["figure.figsize"]`
-`fig_size[0] = 20`
-`fig_size[1] = 20`
-`plt.rcParams["figure.figsize"] = fig_size`
+```
+fig_size = plt.rcParams["figure.figsize"]
+fig_size[0] = 20
+fig_size[1] = 20
+plt.rcParams["figure.figsize"] = fig_size
+```
 
 
 What this chunk of code does is set a size to the plot image displayed in the Jupyter Notebook. By default the size is insufficient for us to monitor all the flights.
@@ -155,19 +160,20 @@ This is pretty obvious. coordinates function is called and the lists with the va
 This code segment creates a basic Basemap. In cartography, there are many projections available to choose from. The miller projection is the simplest form of flat maps that we generally see. If you want to read more about map projections you can do it [here](https://basemaptutorial.readthedocs.io/en/latest/projections.html).
 llcrnrlat is just an abbreviation to lower left corner latitude. What these 4 variables do is again define a region for which the map has to be generated. In this case, it is the Southern part of India. I have set the resolution to high (‘h’) to render really high-quality maps. If you think it uses a lot of compute you can switch to lower quality by setting resolution = ‘c’ instead.
 
-`m.drawcoastlines()`
-`m.drawmapboundary(fill_color = '#FFFFFF')`
-
+```
+m.drawcoastlines()
+m.drawmapboundary(fill_color = '#FFFFFF')
+```
 I think this is pretty readable. It draws coastlines and boundary for the map and sets map color to white.
-
-`x, y = m(lon, lat)`
-`plt.scatter(x, y, s = 5)`
-
+```
+x, y = m(lon, lat)
+plt.scatter(x, y, s = 5)
+```
 This segment at last prints the coordinates on the basemap. plt.scatter(…) is actually a matplotlib function. This is where the integration comes into the picture which we had discussed in the introduction paragraph. Both the basemaps and scatterplot we created are plotted on single axes providing us with the final map!
-
-`display.clear_output(wait=True)`
-`display.display(plt.gcf())`
-
+```
+display.clear_output(wait=True)
+display.display(plt.gcf())
+```
 As soon as the plot is generated and printed the next time a plot is generated we need to remove the previous plot and display the present one. This code does exactly the same thing and hence adds “motion“ to the flights plotted!
 
 ## THIS IS HOW THE FINAL PLOT LOOKS LIKE:
