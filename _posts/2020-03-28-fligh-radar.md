@@ -3,7 +3,7 @@ layout: post
 title:  "Flight Radar : Building your own simple, real time Flight Monitor using Python"
 author: Viraj
 categories: [ Viraj, tutorial ]
-image: /assets/images/aircraft-3702676_960_720.jpg
+image: https://github.com/high-in-entropy/parity/blob/master/assets/images/aircraft-3702676_960_720.jpg?raw=true
 tags: [Python, Fun]
 ---
 
