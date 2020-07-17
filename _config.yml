@@ -17,7 +17,7 @@ plugins:
   - jekyll-seo-tag
   
 authors:
-    sal:
+    Viraj:
       name:           Viraj
       site:           https://high-in-entropy.github.io/mundana-theme-jekyll/
       avatar:         /assets/images/avatar1.jpg
